@@ -281,6 +281,7 @@ html, body {
   }
 }
 
+
 /* Logo images */
 .navbar-brand img {
   height: 70px;
@@ -291,6 +292,67 @@ html, body {
 .navbar-brand {
   gap: 10px;
 }
+/* 🔹 Base styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.navbar-brand img {
+  max-height: 55px;
+  height: auto;
+  width: auto;
+  transition: 0.3s ease;
+}
+
+.navbar-brand span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* 📱 Mobile: 240px to 576px */
+@media (max-width: 576px) {
+  .navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    margin: 0 auto;
+  }
+
+  .navbar-brand img {
+    max-height: 48px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.1rem;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+/* 🖥️ Larger Devices */
+@media (min-width: 992px) {
+  .navbar-brand img {
+    max-height: 65px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.5rem;
+  }
+}
+
+
+
 
 /* Navbar links */
 .navbar-nav .nav-link {
@@ -2084,4 +2146,7 @@ a.btn-primary:hover {
     background: #003fa0;
   }
 }
+
+
+/* Smoothen animation */
 
