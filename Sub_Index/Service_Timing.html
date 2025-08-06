@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Service Timing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS CSS (Animate on Scroll) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./Styles/church-footer.css" rel="stylesheet">
+ <!-- Glightbox -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+
+ <link rel="stylesheet" href="../CSS/Sub_Index_Styles.css">
+  <link rel="stylesheet" href="../CSS/Footer.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    h2.section-title {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #00f0ff;
+      text-shadow: 0 0 5px #00f0ff99;
+    }
+
+    .card-glow {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.4s ease;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+
+    .card-glow:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #00f0ff;
+      box-shadow: 0 0 25px #00f0ff55;
+    }
+
+    .card-glow i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #00f0ff;
+      transition: 0.3s;
+    }
+
+    .card-glow:hover i {
+      text-shadow: 0 0 15px #00f0ff;
+    }
+
+    .card-glow h4 {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .card-glow p {
+      color: #d4eaf7;
+    }
+
+    .card-glow span.scripture {
+      font-style: italic;
+      color: #9feeff;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 767px) {
+      .card-glow {
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .icon-bounce {
+  animation: popIcon 0.8s ease forwards;
+  transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.special-card:hover .icon-bounce {
+  transform: scale(1.3) rotate(5deg);
+  text-shadow: 0 0 20px #00f0ff;
+}
+
+@keyframes popIcon {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.rsvp-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00f0ff, #009cff);
+  color: #fff;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.rsvp-btn:hover {
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ffaa;
+  transform: scale(1.05);
+}
+
+.rsvp-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+.rsvp-btn:hover::after {
+  left: 130%;
+}
+.card-glow:hover {
+  background: linear-gradient(145deg, rgba(0, 255, 255, 0.05), rgba(0, 255, 255, 0.08));
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 174, 255, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+.card-glow i {
+  transition: transform 0.4s ease;
+}
+
+.card-glow:hover i {
+  transform: scale(1.3) rotate(5deg);
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #00f0ff;
+  }
+  100% {
+    text-shadow: 0 0 15px #00f0ff;
+  }
+}
+.rsvp-btn:hover {
+  background: linear-gradient(135deg, #00f0ff, #009cff);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.2);
+}
+.card-glow i {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+      </style>
+</head>
+
+<body>
+  <!-- 🔄 Preloader -->
+<div id="loader" class="startingpreloader">
+  <div class="preloader" id="preloader">
+ <!-- Light beam -->
+  <div class="light-beam"></div>
+
+  <!-- Doves -->
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+
+  <!-- Cross -->
+  <div class="cross"></div>
+
+
+    <!-- Church Name -->
+    <div class="church-name">CSI Church Mangarai</div>
+
+    <!-- Animated "Lighting the way..." -->
+    <div class="subtitle">Lighting the way...</div>
+
+    <!-- Multicolor Loading Bar -->
+    <div class="level-up-loader">
+      <div class="progress"></div>
+    </div>
+
+    <!-- Animated Loading Message -->
+    <div class="loading-text">Loading God’s love…</div>
+
+    <!-- Burst Effect -->
+    <div class="burst" id="burst"></div>
+  </div>
+</div>
+
+
+<!-- 🧾 Main Content Wrapper -->
+<div id="main-content" style="display: none;">
+  <!-- Your index.html content goes here -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 fixed-top">
+      <div class="container-fluid">
+
+        <!-- Brand: Logos + Title -->
+        <div class="navbar-brand d-flex align-items-center">
+          <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" alt="Church Logo" >
+          <span class="fw-bold text-white ms-1">CSI PASTORATE CHURCH</span>
+          <a href="https://csikkd.org/" target="_blank">
+            <img src="../Assests/Images/Logo/CSILOGO.png" alt="CSI Logo" >
+          </a>
+        </div>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse justify-content-end text-end" id="navbarMenu">
+          <ul class="navbar-nav ms-auto ">
+
+            <li class="nav-item"><a class="nav-link" href="../Index.html">Home</a></li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">About</a>
+              <ul class="dropdown-menu ms-auto text-end ">
+                <li><a class="dropdown-item" href="./History.html">History</a></li>
+                <li><a class="dropdown-item" href="./Mission_Vision.html">Mission & Vision</a></li>
+                <li><a class="dropdown-item" href="./Our_Beliefs.html">Our Beliefs</a></li>
+                <li><a class="dropdown-item" href="./Gallery.html">Gallery</li>
+              </ul>
+            </li>
+
+            <!-- People Who Served Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">People Who Served</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Past_Pastors.html">Past Pastors</a></li>
+                <li><a class="dropdown-item" href="#">Church Elders</a></li>
+                <li><a class="dropdown-item" href="./Key_Contribution.html">Key Contributors</a></li>
+              </ul>
+            </li>
+
+            <!-- Committee Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Present
+                Committee</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Pastor.html">Pastor</a></li>
+                <li><a class="dropdown-item" href="./Secretary.html">Secretary</a></li>
+                <li><a class="dropdown-item" href="./Treasurer.html">Treasurer</a></li>
+                <li><a class="dropdown-item" href="./Committee_Members.html">Committee Members</a></li>
+              </ul>
+            </li>
+
+              <!-- events -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Events</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                               <li><a class="dropdown-item" href="./Festivals.html">Festivals</a></li>
+                <li><a class="dropdown-item" href="./Event_Notice.html">Upcomming Events</a></li>
+            
+              </ul>
+            </li>
+
+            <!-- Reach Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reach Us</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="#">Contact Info</a></li>
+                <li><a class="dropdown-item" href="#">Location</a></li>
+                <li><a class="dropdown-item" href="./Service_Timing.html">Service Timings</a></li>
+              </ul>
+            </li>
+
+          
+
+            <!-- Social Media Icons -->
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.instagram.com/csi_pastorate_church_mangarai?igsh=MTNkdGkyMms2eDU0cQ=="><i
+                  class="fab fa-instagram"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="https://www.facebook.com/share/1CAV23YxLN/"><i
+                  class="fab fa-facebook-f"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.youtube.com/@csipastoratechurchmangarai"><i class="fab fa-youtube"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="mailto:csipastoratechurchmangarai@gmail.com">
+                <i class="fas fa-envelope"></i></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Lightbox -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // AOS Initialization
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  });
+</script>
+<script>
+  document.addEventListener("click", function (event) {
+    const navbar = document.querySelector(".navbar-collapse");
+    const toggler = document.querySelector(".navbar-toggler");
+
+    // Collapse if open and click is outside navbar/toggler
+    if (
+      navbar.classList.contains("show") &&
+      !navbar.contains(event.target) &&
+      !toggler.contains(event.target)
+    ) {
+      new bootstrap.Collapse(navbar).hide();
+    }
+  });
+
+  // Collapse navbar on nav-link click
+  // document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+  //   link.addEventListener("click", () => {
+  //     const navbar = document.querySelector(".navbar-collapse");
+  //     if (navbar.classList.contains("show")) {
+  //       new bootstrap.Collapse(navbar).hide();
+  //     }
+  //   });
+  // });
+</script>
+
+<!-- Video Background -->
+ <!-- Video Background Section -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="../Assests/Videos/Promo.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+      </video>
+      
+    </div>
+
+
+ <!-- 🔔 Notice Button -->
+    <div id="notice-button" onclick="toggleNotice()">
+      <i class="fas fa-bell"></i>
+    </div>
+
+    <!-- 📋 Notice Sidebar -->
+    <div id="notice-sidebar">
+      <div class="notice-header">
+        <h5>📢 Announcements</h5>
+        <button onclick="toggleNotice()" class="close-btn">&times;</button>
+      </div>
+
+      <!-- 👇 Add this iframe to load the notice page -->
+      <iframe src="./Notice_Content.html" width="100%" height="400px" style="border: none;"></iframe>
+      </div>
+<script>
+  function toggleNotice() {
+    const sidebar = document.getElementById('notice-sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', () => {
+    const sidebar = document.getElementById('notice-sidebar');
+    const videoSection = document.querySelector('.video-background');
+    const endOfVideo = videoSection.offsetTop + videoSection.offsetHeight;
+
+    if (window.scrollY > endOfVideo && sidebar.classList.contains('active')) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
+      <!-- Your content -->
+
+
+
+<!-- 🕊️ Worship Timings -->
+<section data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+  <h2 class="section-title" data-aos="fade-down">🕊️ Worship Timings</h2>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card-glow text-center">
+          <i class="fas fa-cross"></i>
+          <h4>Wednesday Prayer Fellowship</h4>
+          <p>7:00 PM – 8:30 PM</p>
+          <span class="scripture">"Draw near to God and He will draw near to you" – James 4:8</span>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-glow text-center">
+          <i class="fas fa-hands"></i>
+          <h4>Friday Fasting Prayer</h4>
+          <p>10:00 AM – 12:00 PM</p>
+          <span class="scripture">"Some things only come by prayer and fasting" – Matt 17:21</span>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-glow text-center">
+          <i class="fas fa-church"></i>
+          <h4>Sunday Worship</h4>
+          <p>8:00 AM – 10:00 AM (Tamil)<br>10:30 AM – 12:00 PM (English)</p>
+          <span class="scripture">"Let everything that has breath praise the Lord" – Psalm 150:6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🤝 Fellowship Groups -->
+<section>
+  <h2 class="section-title" data-aos="fade-down">🤝 Fellowship Groups</h2>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3" data-aos="zoom-in">
+        <div class="card-glow text-center">
+          <i class="fas fa-child"></i>
+          <h4>Sunday School</h4>
+          <p>9:00 AM – For Children</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card-glow text-center">
+          <i class="fas fa-users"></i>
+          <h4>Endeavour</h4>
+          <p>Youth-led spiritual growth program</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card-glow text-center">
+          <i class="fas fa-heart"></i>
+          <h4>Youth Fellowship</h4>
+          <p>Fun, Faith & Friendship every week</p>
+        </div>
+      </div>
+      <div class="col-md-3" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card-glow text-center">
+          <i class="fas fa-female"></i>
+          <h4>Women’s Fellowship</h4>
+          <p>Monthly gatherings, prayer & service</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🎉 Special Events -->
+<section>
+  <h2 class="section-title" data-aos="fade-down">🎉 Special Events</h2>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="card-glow text-center">
+          <i class="fas fa-birthday-cake"></i>
+          <h4>Church Anniversary</h4>
+          <p>Celebrating our faith journey together</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-up">
+        <div class="card-glow text-center">
+          <i class="fas fa-gift"></i>
+          <h4>Christmas Outreach</h4>
+          <p>Community programs and Gospel sharing</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="flip-right">
+        <div class="card-glow text-center">
+          <i class="fas fa-star"></i>
+          <h4>Vacation Bible School</h4>
+          <p>Children’s summer spiritual camp</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 🎵 Extracurricular -->
+<section>
+  <h2 class="section-title" data-aos="fade-down">🎵 Extracurricular Activities</h2>
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up-right">
+        <div class="card-glow text-center">
+          <i class="fas fa-guitar"></i>
+          <h4>Instrument Learning</h4>
+          <p>Learn keyboard, guitar, drums for worship</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up-left">
+        <div class="card-glow text-center">
+          <i class="fas fa-microphone-alt"></i>
+          <h4>Vocals Training</h4>
+          <p>Develop your singing for worship ministry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Footer Section -->
+ <!-- FOOTER SECTION START -->
+    <section class="footer-wrapper">
+      <footer class="footer" data-aos="fade-up">
+        <div class="container">
+          <div class="row text-center text-md-start">
+            <!-- Logo/About -->
+            <div class="col-md-3 footer-section">
+              <div class="footer-logo mb-3">
+                <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" loading="lazy" alt="Church Logo">
+              </div>
+              <p>Welcome to our church community. Stay connected through our website and events.</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-3 footer-section">
+              <h5>Contact</h5>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Church Street, City</p>
+              <p><i class="fas fa-phone"></i> +91 9876543210</p>
+              <p><i class="fas fa-envelope"></i> church@email.com</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 footer-section footer-links">
+              <h5>Quick Links</h5>
+              <a href="./Index.html">Home</a>
+              <a href="./History.html">About</a>
+              <a href="#">Events</a>
+              <a href="./Gallery.html">Gallery</a>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-4 footer-section">
+              <h5>Newsletter</h5>
+              <p>Subscribe to stay updated with our news and events.</p>
+              <form class="d-flex">
+                <input type="email" placeholder="Your Email" class="form-control me-2 newsletter-input">
+                <button type="submit" class="btn btn-warning glow-btn">Subscribe</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Donation Box (New Format) -->
+          <div class="col-md-4 footer-section footer-donation m-auto text-center" data-aos="fade-up">
+            <h5>Donation Details</h5>
+            <!-- <p><strong>Bank:</strong> ABC Bank</p>
+            <p><strong>Account No:</strong> 1234567890</p>
+            <p><strong>IFSC:</strong> ABCD0123456</p> -->
+            <button class="btn btn-warning glow-btn mt-2" onclick="toggleDonatePopup()">Donate Now</button>
+          </div>
+
+
+          <!-- Social Icons -->
+          <div class="footer-social mt-4 text-center">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <!-- Developer Link -->
+          <div class="footer-bottom mt-4">
+            © 2025 CSI Pastorate Church| All Rights Reserved </div>
+            <div class="footer-bottom mt-0"><span style="color: #ffc107;"> Developed by</span>
+            <span class="developer-name" onclick="toggleDevPopup()">Shahin N</span>
+
+          </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div id="backToTop" onclick="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Developer Modal -->
+        <div class="dev-modal-overlay" id="devModal">
+
+          <div class="dev-popup popup-animate">
+            <button class="close-btn" onclick="toggleDevPopup()">&times;</button>
+            <div class="dev-profile">
+              <!-- Developer Flip Card -->
+              <div class="flip-card-container">
+                <div class="flip-card" id="devFlipCard">
+                  <div class="flip-card-front">
+                    <img src="../Assests/Images/Footer/Developer.jpg" loading="lazy" alt="Shahin N" class="dev-image" />
+                  </div>
+                  <div class="flip-card-back">
+                    <h4>Shahin N</h4>
+                    <p>Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dev-socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Donate Modal -->
+        <div class="donate-modal-overlay" id="donateModal">
+
+          <div class="donate-popup">
+            <button class="close-btn" onclick="toggleDonatePopup()">&times;</button>
+            <h4 class="text-glow">Donate to Support</h4>
+            <p>Bank Name: XYZ Bank<br>Acc No: 1234567890<br>IFSC: XYZB000123</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- FOOTER SECTION END -->
+
+    <!-- JS Scripts -->
+    <script>
+      // Developer Modal
+      function toggleDevPopup() {
+        document.getElementById('devModal').classList.toggle('active');
+      }
+
+      // Donate Modal
+      function toggleDonatePopup() {
+        document.getElementById('donateModal').classList.toggle('active');
+      }
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+      window.onscroll = () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = "block";
+        else backToTopBtn.style.display = "none";
+      };
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+
+
+    <script>
+      let lastTap = 0;
+      const card = document.getElementById('devFlipCard');
+
+      card.addEventListener('touchend', function () {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+
+        if (tapLength < 300 && tapLength > 0) {
+          card.classList.toggle('zoomed');
+        }
+        lastTap = currentTime;
+      });
+    </script>
+    <!-- Developer Modal and Back to Top -->
+<script>
+  document.querySelector('.developer-link').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.add('active');
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.remove('active');
+  });
+
+  const backBtn = document.getElementById('backToTop');
+  window.onscroll = () => {
+    backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  };
+  backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+</script>
+
+<script>
+  // Developer Popup Toggle
+  document.getElementById('developerLink').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'flex';
+  });
+
+  document.querySelector('#devModal .close-btn').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target.id === 'devModal') {
+      document.getElementById('devModal').style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  // Dev Modal Zoom / Flip
+  const flipCard = document.getElementById('devFlipCard');
+  const devImage = document.querySelector('.dev-image');
+
+  let lastTap = 0;
+  let isZoomed = false;
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+
+  devImage.addEventListener('touchstart', function (e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+      e.preventDefault();
+      isZoomed = !isZoomed;
+      devImage.classList.toggle('zoomed', isZoomed);
+    }
+
+    lastTap = currentTime;
+  });
+</script>
+
+<!-- Tooltip Initialization -->
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+<!-- Enable repeated animation -->
+ <script>
+  AOS.init({ once: false }); // Enable repeated animation
+</script>
+    
+<!-- to avoid the overflow width -->
+
+  <!-- // end of loading div -->
+  </div>
+  <!-- Preloading script -->
+ <script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const burst = document.getElementById("burst");
+
+    setTimeout(() => {
+      burst.classList.add("show");
+      setTimeout(() => {
+        preloader.style.transition = "opacity 0.5s ease";
+        preloader.style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("main-content").style.display = "block";
+
+          // 👇 Re-initialize AOS here
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh(); // or AOS.init() if not already done
+          }
+
+        }, 300);
+      }, 300);
+    }, 700);
+  });
+  
+</script>
+
+
+<!-- preloading end -->
+ 
+
+
+<!-- service timing -->
+   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+
+</html>
