@@ -291,6 +291,65 @@ html, body {
 .navbar-brand {
   gap: 10px;
 }
+/* 🔹 Base styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.navbar-brand img {
+  max-height: 55px;
+  height: auto;
+  width: auto;
+  transition: 0.3s ease;
+}
+
+.navbar-brand span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* 📱 Mobile: 240px to 576px */
+@media (max-width: 576px) {
+  .navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    margin: 0 auto;
+  }
+
+  .navbar-brand img {
+    max-height: 48px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.1rem;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+/* 🖥️ Larger Devices */
+@media (min-width: 992px) {
+  .navbar-brand img {
+    max-height: 65px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.5rem;
+  }
+}
+
 
 /* Navbar links */
 .navbar-nav .nav-link {
@@ -356,17 +415,84 @@ html, body {
 
 .video-background {
   position: relative;
-  height: 90px;
+  height: 80px;
   overflow: hidden;
 }
 
-@media screen and (max-width: 800px) {
-  .video-background{
-    position:relative;
-    height: 127px;
-    overflow: hidden;
+/* 📱 Very small phones (iPhone SE, Galaxy A01, 320–359px) */
+@media screen and (max-width: 359px) {
+    .video-background {
+        height: 50px;
+    }
+}
+
+/* 📱 Small phones (360px–399px) */
+@media screen and (min-width: 360px) and (max-width: 399px) {
+    .video-background {
+        height: 100px;
+    }
+}
+@media only screen and (device-width: 390px) and (device-height: 844px) and (orientation: portrait) {
+  .video-background {
+    height: 70px;
   }
 }
+
+@media only screen and (device-width: 844px) and (device-height: 390px) and (orientation: landscape) {
+  .video-background {
+    height: 90px;
+  }
+}
+
+/* 📲 Medium phones (400px–479px) */
+@media screen and (min-width: 400px) and (max-width: 479px) {
+    .video-background {
+        height: 65px;
+    }
+}
+
+/* 📱 Regular phones (480px–575px) */
+@media screen and (min-width: 480px) and (max-width: 575px) {
+    .video-background {
+        height: 70px;
+    }
+}
+
+/* 📱 Tablets & Large phones (576px–767px) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .video-background {
+        height: 74px;
+    }
+}
+
+/* 💻 Small tablets & portrait iPads (768px–991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .video-background {
+        height: 80px;
+    }
+}
+
+/* 💻 Laptops (992px–1199px) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .video-background {
+        height: 85px;
+    }
+}
+
+/* 🖥️ Large screens (1200px–1439px) */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .video-background {
+        height: 85px;
+    }
+}
+
+/* 🖥️ Extra-large & 4K monitors (1440px and up) */
+@media screen and (min-width: 1440px) {
+    .video-background {
+        height: 80px;
+    }
+}
+
 .video-background video {
   position: absolute;
   top: 50%;
