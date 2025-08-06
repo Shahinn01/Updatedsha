@@ -1,0 +1,208 @@
+<html>
+<head>
+    <title>notice</title>
+    
+    <style>
+        /* 📋 Notice Sidebar */
+#notice-sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 320px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  transition: right 0.4s ease;
+  z-index: 1040;
+  padding: 15px;
+  font-family: 'Noto Sans Tamil', sans-serif;
+}
+
+#notice-sidebar.active {
+  right: 0;
+}
+
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #e91e63;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.notice-header .close-btn {
+  background: none;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.notice-content h6 {
+  position: absolute;
+  margin-top: 0px;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+/* Notice and Event Scroll Sections */
+.notice-list,
+.event-list {
+  height: 150px;
+  /* adjust based on content */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* List container scroll animation */
+.notice-list ul,
+.event-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  animation: scrollText 15s linear infinite;
+}
+
+.notice-list li,
+.event-list li {
+  padding: 8px 10px;
+  border-bottom: 1px dashed #666;
+  font-size: 14px;
+  color: #ff0000;
+  background-color: transparent;
+}
+
+.event-list .highlight {
+
+  color: #ffeb3b;
+  font-weight: bold;
+}
+
+/* Scrolling animation */
+@keyframes scrollText {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  #notice-button {
+    top: 150px;
+    right: 15px;
+  }
+
+  #notice-sidebar {
+    width: 40%;
+    height: 73%;
+  }
+
+  .notice-list {
+    height: 200px;
+  }
+
+  .event-list {
+    height: 200px;
+  }
+}
+
+/* Media Query for Mobile/Tablet */
+@media (max-width: 3000px) {
+  #notice-sidebar {
+    right: -230%;
+    height: 450px;
+    top: 80px;
+    border-radius: 0;
+    bottom: auto;
+  }
+
+  #notice-button {
+    top: 150px;
+    right: 15px;
+  }
+
+  #notice-sidebar.active {
+    right: 0;
+  }
+
+  #notice-button {
+    top: 50% !important;
+    right: 0 !important;
+    transform: translateY(-50%);
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  #notice-sidebar {
+    right: -230%;
+    height: 500px;
+    top: 100px;
+    border-radius: 0;
+    bottom: auto;
+  }
+
+  #notice-button {
+    top: 50 !important;
+    right: 0 !important;
+    transform: translateY(-50%);
+    border-radius: 10px 0 0 10px;
+  }
+
+  #notice-sidebar.active {
+    right: 0;
+  }
+
+  #notice-button {
+    top: 50% !important;
+    right: 0 !important;
+    transform: translateY(-50%);
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+    </style>
+</head>
+<body>
+<div class="notice-content">
+        <div class="notice-list">
+          <h6>Latest Notices</h6>
+          <ul id="notice-list">
+            <li>Sunday Worship @ 8:30 AM</li>
+            <li>Friday Night Prayer @ 6:30 PM</li>
+            <li>Youth Camp Registration Open</li>
+            <li>Choir Practice at 7:00 AM</li>
+            <li>Women's Fellowship this Saturday</li>
+            <li>Special Fasting Prayer - Aug 15</li>
+            <li>Harvest Festival Planning Meeting</li>
+            <li>New Members Welcome Service</li>
+            <li>Sunday School Resumes This Week</li>
+            <li>Committee Meeting Next Sunday</li>
+          </ul>
+        </div>
+        <div class="event-list">
+          <h6 class="text-warning">Upcoming Events</h6>
+          <ul id="event-list">
+            <li class="highlight">Aug 15 – Independence Day Prayer</li>
+            <li class="highlight">Aug 18 – Youth Sunday</li>
+            <li class="highlight">Aug 25 – Healing Service</li>
+            <li class="highlight">Sep 01 – Communion Service</li>
+            <li class="highlight">Sep 07 – Choir Auditions</li>
+            <li class="highlight">Sep 10 – Outreach Program</li>
+            <li class="highlight">Sep 15 – Women's Retreat</li>
+            <li class="highlight">Sep 20 – Bible Quiz Finals</li>
+            <li class="highlight">Sep 25 – Family Counseling Day</li>
+            <li class="highlight">Sep 30 – Youth Talent Show</li>
+          </ul>
+        </div>
+      </div>
+      </body>
+      </html>

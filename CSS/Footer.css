@@ -1,0 +1,705 @@
+.footer-wrapper {
+    background: url('https://t3.ftcdn.net/jpg/02/43/36/88/360_F_243368800_iYenQw8k85GTsJ39VHFxanBkj3MQxzKW.jpg') no-repeat center;
+    background-size: cover;
+    padding-top: 60px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.footer-section h5 {
+    color: #ffc107;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ccc;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-logo img {
+    max-width: 90px;
+    animation: popIn 1s ease;
+}
+
+.footer-donation {
+    padding: 20px;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-social a {
+    color: #ffc107;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+    transform: scale(1.2) rotate(5deg);
+}
+
+.text-glow {
+    color: #ffc107;
+    text-shadow: 0 0 10px #ffc107, 0 0 15px #ff0;
+}
+
+.glow-btn {
+    box-shadow: 0 0 10px #ffc107;
+    transition: 0.4s ease;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 20px #ffc107, 0 0 40px #ff0;
+    transform: scale(1.05);
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+    background: #ffc107;
+    color: #000;
+    padding: 12px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 0 10px #ffc107, 0 0 20px #ff0;
+    animation: pulse 2s infinite;
+    transition: 0.3s;
+}
+
+#backToTop:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.developer-link {
+    color: #ffc107;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.developer-link:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #ffc107;
+}
+
+.underline-hover::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    transition: width 0.3s ease;
+}
+
+.underline-hover:hover::after {
+    width: 100%;
+}
+
+.dev-modal-overlay,
+.donate-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dev-modal-overlay.active,
+.donate-modal-overlay.active {
+    display: flex;
+}
+
+.dev-popup,
+.donate-popup {
+    background: linear-gradient(145deg, #222, #111);
+    border: 2px solid #ffc107;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 1000px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 0 25px #ffc107;
+    animation: popupFade 0.5s ease-out;
+    position: relative;
+}
+
+.animated-border {
+    animation: borderGlow 4s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 10px #ffc107;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ff0;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #ffc107;
+    }
+}
+
+.dev-popup .dev-avatar {
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #ffc107;
+    margin-bottom: 10px;
+}
+
+.dev-icons a {
+    font-size: 20px;
+    color: #ffc107;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.dev-icons a:hover {
+    transform: scale(1.3);
+    color: #fff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #ffc107;
+    transform: rotate(90deg);
+}
+
+@keyframes popupFade {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.5) rotate(-10deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px #ffc107;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #ff0;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #ffc107;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+/* Add to existing .dev-popup and .donate-popup */
+.popup-animate {
+    animation: scaleFade 0.4s ease-out forwards;
+}
+
+@keyframes scaleFade {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.footer-donation {
+    padding: 20px;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-donation:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.6);
+}
+
+.dev-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.dev-modal-overlay.active {
+    display: flex;
+}
+
+.dev-popup {
+    background: #111;
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    border: 2px solid #ffc107;
+    animation: scaleFade 0.4s ease-out forwards;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #ffc107;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    color: #fff;
+}
+
+.developer-name {
+    position: relative;
+    cursor: pointer;
+    color: #ffc107;
+    transition: color 0.3s ease;
+}
+
+.developer-name::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #ffc107;
+    transition: width 0.4s ease;
+}
+
+.developer-name:hover::after {
+    width: 100%;
+}
+
+.developer-name:hover {
+    color: #fff;
+}
+
+.rotating-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ffc107;
+    animation: rotateDev 10s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+}
+
+/* 🌀 Rotating + Flip Developer Image */
+.dev-profile {
+    perspective: 1000px;
+    /* Required for 3D flip */
+}
+
+.rotating-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ffc107;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    transition: transform 0.8s ease, box-shadow 0.4s ease;
+    animation: glowBorder 2s ease-in-out infinite;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: inline-block;
+}
+
+.rotating-image:hover {
+    transform: rotateY(180deg) scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* ✨ Glowing animated border loop */
+@keyframes glowBorder {
+    0% {
+        box-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #fff176, 0 0 40px #ffeb3b;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107;
+    }
+}
+
+@keyframes scaleFade {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 🎯 Developer Flip Card */
+.flip-card-container {
+    perspective: 1000px;
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card.zoomed {
+    transform: scale(1.2);
+    z-index: 9999;
+}
+
+.flip-card-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+}
+
+.flip-card-front img.dev-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 4px solid #ffc107;
+}
+
+.flip-card-back {
+    background: #121212;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-back h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+.flip-card-back p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Footer Bottom Developer Name */
+.developer-name {
+    display: inline-block;
+    position: relative;
+    color: #ffc107;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* Glow effect on hover */
+.developer-name:hover {
+    color: #fff;
+    background: rgba(255, 193, 7, 0.1);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8), 0 0 10px rgba(255, 87, 34, 0.6);
+    transform: scale(1.05);
+}
+
+/* Animated Underline */
+.developer-name::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #ffc107, #ff5722);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.developer-name:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Optional pulsing glow animation */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.9);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+    }
+}
+
+.developer-name:hover {
+    animation: pulseGlow 1.5s infinite;
+}
+
+/* FLIP CARD CONTAINER */
+.flip-card-container {
+    perspective: 1000px;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 3px solid #ffc107;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+}
+
+.flip-card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+}
+
+.flip-card-back {
+    background: #222;
+    color: #fff;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Trigger the flip on hover */
+.flip-card-container:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+/* DEVELOPER IMAGE */
+.dev-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.4s ease;
+    border-radius: 12px;
+}
+
+/* Zoom on double click */
+.dev-image:active {
+    transform: scale(1.2);
+}
+
+/* Glow on hover */
+.dev-image:hover {
+    filter: brightness(1.1) drop-shadow(0 0 8px #ffc107);
+    transform: scale(1.05);
+}
+
+/* SOCIAL ICONS */
+.dev-socials {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.dev-socials a {
+    color: #ffc107;
+    font-size: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+/* Hover Effects */
+.dev-socials a:hover {
+    color: #fff;
+    transform: scale(1.2) rotate(10deg);
+    text-shadow: 0 0 10px #ffc107;
+}
+
+/* Flip-card base styles */
+.flip-card-container {
+    perspective: 1000px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.flip-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background: #111;
+}
+
+.flip-card-back {
+    background: #222;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+}
+
+.dev-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.dev-image.zoomed {
+    transform: scale(1.4);
+}
+
+.dev-image.zoomed {
+    transform: scale(1.4);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.dev-socials a {
+    font-size: 20px;
+    margin: 0 8px;
+    color: #fff;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.dev-socials a:hover {
+    transform: scale(1.3);
+    color: #ffc107;
+}

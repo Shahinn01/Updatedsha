@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS CSS (Animate on Scroll) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./Styles/church-footer.css" rel="stylesheet">
+ <!-- Glightbox -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="../CSS/Sub_Index_Styles.css">
+  <link rel="stylesheet" href="../CSS/Footer.css">
+  <style>
+
+    /* heading */
+.gallery-heading {
+  font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
+  color: #000; /* Black text */
+  text-align: center;
+  margin: 2rem auto;
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0); /* initial */
+  transition: all 0.3s ease;
+  font-weight: 700;
+}
+
+.gallery-heading:hover {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2),
+               0 0 10px rgba(0, 0, 0, 0.2),
+               0 0 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gallery-section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 20px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-grid.hidden {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInZoom 0.6s ease forwards;
+}
+
+@keyframes fadeInZoom {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #007BFF;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.achievement-category {
+  font-weight: bold;
+  background: #f2f2f2;
+  padding: 10px;
+  margin-top: 30px;
+  border-left: 5px solid #007BFF;
+  font-size: 18px;
+  animation: fadeInBody 0.7s ease-in-out;
+}
+
+.filter-buttons,
+.sub-filter-buttons {
+  text-align: center;
+  margin-bottom: 25px;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+.filter-buttons button,
+.sub-filter-buttons button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-buttons button.active,
+.sub-filter-buttons button.active {
+  background: #007BFF;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeInBody 1s ease;
+}
+
+.view-all-btn {
+  padding: 10px 30px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.view-all-btn:hover {
+  background: #0056b3;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#fullscreenModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+#fullscreenModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  animation: zoomIn 0.4s ease;
+}
+
+#fullscreenModal .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  background: #ff4444;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10001;
+}
+
+#fullscreenModal .close-btn:hover {
+  transform: rotate(90deg);
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* Fullscreen Modal Styling */
+#fullscreenModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  animation: fadeIn 0.4s ease;
+}
+
+#fullscreenModal img {
+  max-width: 85%;
+  max-height: 85%;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  animation: scaleIn 0.4s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+#fullscreenModal img:hover {
+  transform: scale(1.03);
+}
+
+/* Close Button */
+#fullscreenModal .close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 28px;
+  color: white;
+  background: linear-gradient(145deg, #ff4b5c, #ff1e40);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 10001;
+  box-shadow: 0 0 10px rgba(255, 30, 64, 0.5);
+  transition: transform 0.3s ease;
+}
+
+#fullscreenModal .close-btn:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+/* Gallery Item Hover Effect */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1), 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* Animations */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* Fullscreen Video Modal */
+#fullscreenVideoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.9);
+  backdrop-filter: blur(6px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  animation: fadeIn 0.4s ease;
+}
+
+#fullscreenVideoModal .close-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  font-size: 28px;
+  color: white;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 10002;
+  box-shadow: 0 0 10px rgba(255, 105, 135, 0.5);
+  transition: transform 0.3s ease;
+}
+
+#fullscreenVideoModal .close-btn:hover {
+  transform: rotate(180deg) scale(1.1);
+}
+
+#fullscreenVideoModal .video-wrapper {
+  width: 90%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+  animation: scaleIn 0.4s ease;
+}
+
+#fullscreenVideoModal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+
+
+      </style>
+</head>
+
+<body>
+   <!-- 🔄 Preloader -->
+<div id="loader" class="startingpreloader">
+  <div class="preloader" id="preloader">
+ <!-- Light beam -->
+  <div class="light-beam"></div>
+
+  <!-- Doves -->
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+
+  <!-- Cross -->
+  <div class="cross"></div>
+
+
+    <!-- Church Name -->
+    <div class="church-name">CSI Church Mangarai</div>
+
+    <!-- Animated "Lighting the way..." -->
+    <div class="subtitle">Lighting the way...</div>
+
+    <!-- Multicolor Loading Bar -->
+    <div class="level-up-loader">
+      <div class="progress"></div>
+    </div>
+
+    <!-- Animated Loading Message -->
+    <div class="loading-text">Loading God’s love…</div>
+
+    <!-- Burst Effect -->
+    <div class="burst" id="burst"></div>
+  </div>
+</div>
+
+
+<!-- 🧾 Main Content Wrapper -->
+<div id="main-content" style="display: none;">
+  <!-- Your index.html content goes here -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 fixed-top">
+      <div class="container-fluid">
+
+        <!-- Brand: Logos + Title -->
+        <div class="navbar-brand d-flex align-items-center">
+          <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" alt="Church Logo" >
+          <span class="fw-bold text-white ms-1">CSI PASTORATE CHURCH</span>
+          <a href="https://csikkd.org/" target="_blank">
+            <img src="../Assests/Images/Logo/CSILOGO.png" alt="CSI Logo" >
+          </a>
+        </div>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse justify-content-end text-end" id="navbarMenu">
+          <ul class="navbar-nav ms-auto ">
+
+            <li class="nav-item"><a class="nav-link" href="../Index.html">Home</a></li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">About</a>
+              <ul class="dropdown-menu ms-auto text-end ">
+                <li><a class="dropdown-item" href="./History.html">History</a></li>
+                <li><a class="dropdown-item" href="./Mission_Vision.html">Mission & Vision</a></li>
+                <li><a class="dropdown-item" href="./Our_Beliefs.html">Our Beliefs</a></li>
+                <li><a class="dropdown-item" href="./Gallery.html">Gallery</li>
+              </ul>
+            </li>
+
+            <!-- People Who Served Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">People Who Served</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Past_Pastors.html">Past Pastors</a></li>
+                <li><a class="dropdown-item" href="#">Church Elders</a></li>
+                <li><a class="dropdown-item" href="./Key_Contribution.html">Key Contributors</a></li>
+              </ul>
+            </li>
+
+            <!-- Committee Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Present
+                Committee</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Pastor.html">Pastor</a></li>
+                <li><a class="dropdown-item" href="./Secretary.html">Secretary</a></li>
+                <li><a class="dropdown-item" href="./Treasurer.html">Treasurer</a></li>
+                <li><a class="dropdown-item" href="./Committee_Members.html">Committee Members</a></li>
+              </ul>
+            </li>
+
+              <!-- events -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Events</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                               <li><a class="dropdown-item" href="./Festivals.html">Festivals</a></li>
+                <li><a class="dropdown-item" href="./Event_Notice.html">Upcomming Events</a></li>
+            
+              </ul>
+            </li>
+
+            <!-- Reach Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reach Us</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="#">Contact Info</a></li>
+                <li><a class="dropdown-item" href="#">Location</a></li>
+                <li><a class="dropdown-item" href="./Service_Timing.html">Service Timings</a></li>
+              </ul>
+            </li>
+
+          
+
+            <!-- Social Media Icons -->
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.instagram.com/csi_pastorate_church_mangarai?igsh=MTNkdGkyMms2eDU0cQ=="><i
+                  class="fab fa-instagram"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="https://www.facebook.com/share/1CAV23YxLN/"><i
+                  class="fab fa-facebook-f"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.youtube.com/@csipastoratechurchmangarai"><i class="fab fa-youtube"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="mailto:csipastoratechurchmangarai@gmail.com">
+                <i class="fas fa-envelope"></i></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Lightbox -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // AOS Initialization
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  });
+</script>
+
+
+<!-- Video Background -->
+ <!-- Video Background Section -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="../Assests/Videos/Promo.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+      </video>
+      
+    </div>
+
+
+ <!-- 🔔 Notice Button -->
+    <div id="notice-button" onclick="toggleNotice()">
+      <i class="fas fa-bell"></i>
+    </div>
+
+    <!-- 📋 Notice Sidebar -->
+    <div id="notice-sidebar">
+      <div class="notice-header">
+        <h5>📢 Announcements</h5>
+        <button onclick="toggleNotice()" class="close-btn">&times;</button>
+      </div>
+
+      <!-- 👇 Add this iframe to load the notice page -->
+      <iframe src="./Notice_Content.html" width="100%" height="400px" style="border: none;"></iframe>
+      </div>
+<script>
+  function toggleNotice() {
+    const sidebar = document.getElementById('notice-sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', () => {
+    const sidebar = document.getElementById('notice-sidebar');
+    const videoSection = document.querySelector('.video-background');
+    const endOfVideo = videoSection.offsetTop + videoSection.offsetHeight;
+
+    if (window.scrollY > endOfVideo && sidebar.classList.contains('active')) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
+      <!-- Your content -->
+
+
+
+
+ <section class="gallery-section">
+   <h1 class="gallery-heading">Church Gallery</h1>
+
+    <!-- Main Filters -->
+    <div class="filter-buttons">
+      <button class="active" onclick="filterGallery('photos')">📷 Photos</button>
+      <button onclick="filterGallery('videos')">🎥 Videos</button>
+      <button onclick="filterGallery('achievements')">🏆 Achievements</button>
+    </div>
+
+    <!-- Subfilters for Achievements -->
+    <div class="sub-filter-buttons hidden" id="achievementFilters">
+      <button class="active" onclick="filterAchievement('all')">All</button>
+      <button onclick="filterAchievement('sundayschool')">📚 Sunday School</button>
+      <button onclick="filterAchievement('choir')">🎤 Choir</button>
+      <button onclick="filterAchievement('special')">✨ Special Events</button>
+      <button onclick="filterAchievement('vbs')">🎒 VBS</button>
+      <button onclick="filterAchievement('youth')">🧑‍🤝‍🧑 Youth</button>
+      <button onclick="filterAchievement('women')">👩 Women</button>
+    </div>
+
+    <!-- PHOTOS -->
+    <div class="gallery-grid" id="photosGrid">
+      <div class="gallery-item"><a href="photo1.jpg" data-lightbox="photos"><img src="../Sub_Index_Assests/Gallery_Images_Videos/timing_bg.jpg" alt=""><div class="overlay"><i class="fa fa-camera"></i> Church Front</div></a></div>
+      <div class="gallery-item"><a href="photo2.jpg" data-lightbox="photos"><img src="../assests/images/gallery/timing.jpg" alt=""><div class="overlay"><i class="fa fa-cross"></i> Altar</div></a></div>
+      <div class="gallery-item"><a href="photo3.jpg" data-lightbox="photos"><img src="../assests/images/gallery/timing.jpg" alt=""><div class="overlay"><i class="fa fa-users"></i> Sunday Fellowship</div></a></div>
+      <div class="gallery-item hidden"><a href="photo4.jpg" data-lightbox="photos"><img src="../assests/images/gallery/bibleverse.png" alt=""><div class="overlay"><i class="fa fa-church"></i> Prayer Meet</div></a></div>
+      <div class="gallery-item hidden"><a href="photo5.jpg" data-lightbox="photos"><img src="../assests/images/gallery/sha.jpg" alt=""><div class="overlay"><i class="fa fa-hands"></i> Worship</div></a></div>
+      <div class="gallery-item"><a href="photo1.jpg" data-lightbox="photos"><img src="../assests/images/gallery/timing.jpg" alt=""><div class="overlay"><i class="fa fa-camera"></i> Church Front</div></a></div>
+      <div class="gallery-item"><a href="photo2.jpg" data-lightbox="photos"><img src="../assests/images/gallery/timing.jpg" alt=""><div class="overlay"><i class="fa fa-cross"></i> Altar</div></a></div>
+      <div class="gallery-item"><a href="photo3.jpg" data-lightbox="photos"><img src="../assests/images/gallery/timing.jpg" alt=""><div class="overlay"><i class="fa fa-users"></i> Sunday Fellowship</div></a></div>
+    </div>
+
+    <!-- VIDEOS -->
+      <section class="video-gallery-section gallery-grid hidden" id="videosGrid">
+  <h2 class="section-title text-glow text-center">🎥 Video Gallery</h2>
+  <div class="gallery-grid" id="videosGrid">
+
+    <!-- MP4 Video -->
+    <div class="gallery-item video" data-video="../assests/videos/bearers background.mp4">
+      <a href="#">
+        <img src="../assests/videos/bearers background.mp4" alt="Christmas Play">
+        <div class="overlay"><i class="fa fa-play"></i> Christmas Play</div>
+      </a>
+    </div>
+
+    <!-- YouTube Video -->
+    <div class="gallery-item video" data-video="https://youtu.be/A76WsWUWsa4">
+      <a href="#">
+        <img src="https://img.youtube.com/vi/A76WsWUWsa4/hqdefault.jpg" alt="Sermon">
+        <div class="overlay"><i class="fa fa-play-circle"></i> Sermon</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- ACHIEVEMENTS -->
+    <div class="gallery-grid hidden" id="achievementsGrid">
+
+      <div class="achievement-category"><i class="fa fa-book-open"></i> Sunday School</div>
+      <div class="gallery-item ach-item sundayschool"><a href="sunday1.jpg" data-lightbox="achievements"><img src="sunday1.jpg" alt=""><span class="badge">2024</span><div class="overlay">Bible Quiz</div></a></div>
+
+      <div class="achievement-category"><i class="fa fa-music"></i> Choir</div>
+      <div class="gallery-item ach-item choir"><a href="choir1.jpg" data-lightbox="achievements"><img src="choir1.jpg" alt=""><span class="badge">2023</span><div class="overlay">Singing Competition</div></a></div>
+
+      <div class="achievement-category"><i class="fa fa-star"></i> Special Events</div>
+      <div class="gallery-item ach-item special"><a href="elocution.jpg" data-lightbox="achievements"><img src="elocution.jpg" alt=""><div class="overlay">Elocution Winner</div></a></div>
+      <div class="gallery-item ach-item special"><a href="bq.jpg" data-lightbox="achievements"><img src="bq.jpg" alt=""><div class="overlay">Bible Quiz</div></a></div>
+
+      <div class="achievement-category"><i class="fa fa-child"></i> VBS</div>
+      <div class="gallery-item ach-item vbs"><a href="vbs1.jpg" data-lightbox="achievements"><img src="vbs1.jpg" alt=""><div class="overlay">Vacation Bible School</div></a></div>
+
+      <div class="achievement-category"><i class="fa fa-users"></i> Youth Fellowship</div>
+      <div class="gallery-item ach-item youth"><a href="youth1.jpg" data-lightbox="achievements"><img src="youth1.jpg" alt=""><div class="overlay">Youth Program</div></a></div>
+
+      <div class="achievement-category"><i class="fa fa-female"></i> Women Fellowship</div>
+      <div class="gallery-item ach-item women"><a href="women1.jpg" data-lightbox="achievements"><img src="women1.jpg" alt=""><div class="overlay">Women's Workshop</div></a></div>
+
+    </div>
+
+    <div class="view-all-container">
+      <button class="view-all-btn" onclick="toggleViewAll()">View All</button>
+    </div>
+  </section>
+
+
+
+<!-- Fullscreen Image Popup Modal -->
+<div id="fullscreenModal">
+  <button class="close-btn" onclick="closeFullscreen()">&times;</button>
+  <img id="fullscreenImage" src="" alt="Full view" />
+</div>
+
+<!-- Fullscreen Video Popup Modal -->
+<div id="fullscreenVideoModal">
+  <button class="close-btn" onclick="closeVideoPopup()">&times;</button>
+  <div class="video-wrapper">
+    <iframe id="videoPlayer" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Footer Section -->
+ <!-- FOOTER SECTION START -->
+    <section class="footer-wrapper">
+      <footer class="footer" data-aos="fade-up">
+        <div class="container">
+          <div class="row text-center text-md-start">
+            <!-- Logo/About -->
+            <div class="col-md-3 footer-section">
+              <div class="footer-logo mb-3">
+                <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" loading="lazy" alt="Church Logo">
+              </div>
+              <p>Welcome to our church community. Stay connected through our website and events.</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-3 footer-section">
+              <h5>Contact</h5>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Church Street, City</p>
+              <p><i class="fas fa-phone"></i> +91 9876543210</p>
+              <p><i class="fas fa-envelope"></i> church@email.com</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 footer-section footer-links">
+              <h5>Quick Links</h5>
+              <a href="./Index.html">Home</a>
+              <a href="./History.html">About</a>
+              <a href="#">Events</a>
+              <a href="./Gallery.html">Gallery</a>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-4 footer-section">
+              <h5>Newsletter</h5>
+              <p>Subscribe to stay updated with our news and events.</p>
+              <form class="d-flex">
+                <input type="email" placeholder="Your Email" class="form-control me-2 newsletter-input">
+                <button type="submit" class="btn btn-warning glow-btn">Subscribe</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Donation Box (New Format) -->
+          <div class="col-md-4 footer-section footer-donation m-auto text-center" data-aos="fade-up">
+            <h5>Donation Details</h5>
+            <!-- <p><strong>Bank:</strong> ABC Bank</p>
+            <p><strong>Account No:</strong> 1234567890</p>
+            <p><strong>IFSC:</strong> ABCD0123456</p> -->
+            <button class="btn btn-warning glow-btn mt-2" onclick="toggleDonatePopup()">Donate Now</button>
+          </div>
+
+
+          <!-- Social Icons -->
+          <div class="footer-social mt-4 text-center">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <!-- Developer Link -->
+          <div class="footer-bottom mt-4">
+            © 2025 CSI Pastorate Church| All Rights Reserved </div>
+            <div class="footer-bottom mt-0"><span style="color: #ffc107;"> Developed by</span>
+            <span class="developer-name" onclick="toggleDevPopup()">Shahin N</span>
+
+          </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div id="backToTop" onclick="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Developer Modal -->
+        <div class="dev-modal-overlay" id="devModal">
+
+          <div class="dev-popup popup-animate">
+            <button class="close-btn" onclick="toggleDevPopup()">&times;</button>
+            <div class="dev-profile">
+              <!-- Developer Flip Card -->
+              <div class="flip-card-container">
+                <div class="flip-card" id="devFlipCard">
+                  <div class="flip-card-front">
+                    <img src="../Assests/Images/Footer/Developer.jpg" loading="lazy" alt="Shahin N" class="dev-image" />
+                  </div>
+                  <div class="flip-card-back">
+                    <h4>Shahin N</h4>
+                    <p>Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dev-socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Donate Modal -->
+        <div class="donate-modal-overlay" id="donateModal">
+
+          <div class="donate-popup">
+            <button class="close-btn" onclick="toggleDonatePopup()">&times;</button>
+            <h4 class="text-glow">Donate to Support</h4>
+            <p>Bank Name: XYZ Bank<br>Acc No: 1234567890<br>IFSC: XYZB000123</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- FOOTER SECTION END -->
+
+    <!-- JS Scripts -->
+    <script>
+      // Developer Modal
+      function toggleDevPopup() {
+        document.getElementById('devModal').classList.toggle('active');
+      }
+
+      // Donate Modal
+      function toggleDonatePopup() {
+        document.getElementById('donateModal').classList.toggle('active');
+      }
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+      window.onscroll = () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = "block";
+        else backToTopBtn.style.display = "none";
+      };
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+
+
+    <script>
+      let lastTap = 0;
+      const card = document.getElementById('devFlipCard');
+
+      card.addEventListener('touchend', function () {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+
+        if (tapLength < 300 && tapLength > 0) {
+          card.classList.toggle('zoomed');
+        }
+        lastTap = currentTime;
+      });
+    </script>
+    <!-- Developer Modal and Back to Top -->
+<script>
+  document.querySelector('.developer-link').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.add('active');
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.remove('active');
+  });
+
+  const backBtn = document.getElementById('backToTop');
+  window.onscroll = () => {
+    backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  };
+  backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+</script>
+
+<script>
+  // Developer Popup Toggle
+  document.getElementById('developerLink').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'flex';
+  });
+
+  document.querySelector('#devModal .close-btn').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target.id === 'devModal') {
+      document.getElementById('devModal').style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  // Dev Modal Zoom / Flip
+  const flipCard = document.getElementById('devFlipCard');
+  const devImage = document.querySelector('.dev-image');
+
+  let lastTap = 0;
+  let isZoomed = false;
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+
+  devImage.addEventListener('touchstart', function (e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+      e.preventDefault();
+      isZoomed = !isZoomed;
+      devImage.classList.toggle('zoomed', isZoomed);
+    }
+
+    lastTap = currentTime;
+  });
+</script>
+
+<!-- Tooltip Initialization -->
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+<!-- Enable repeated animation -->
+ <script>
+  AOS.init({ once: false }); // Enable repeated animation
+</script>
+    
+<!-- to avoid the overflow width -->
+
+  <!-- // end of loading div -->
+  </div>
+  <!-- Preloading script -->
+ <script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const burst = document.getElementById("burst");
+
+    setTimeout(() => {
+      burst.classList.add("show");
+      setTimeout(() => {
+        preloader.style.transition = "opacity 0.5s ease";
+        preloader.style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("main-content").style.display = "block";
+
+          // 👇 Re-initialize AOS here
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh(); // or AOS.init() if not already done
+          }
+
+        }, 300);
+      }, 300);
+    }, 700);
+  });
+  
+</script>
+
+
+<!-- preloading end -->
+
+
+
+
+
+  <!-- gallery scrips -->
+   <!-- Lightbox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+  <script>
+    let currentSection = 'photos';
+    let viewAllActive = false;
+
+    function filterGallery(section) {
+      currentSection = section;
+      viewAllActive = false;
+
+      document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.getElementById("achievementFilters").classList.toggle("hidden", section !== "achievements");
+
+      ["photosGrid", "videosGrid", "achievementsGrid"].forEach(id => {
+        document.getElementById(id).classList.add("hidden");
+      });
+
+      document.getElementById(section + "Grid").classList.remove("hidden");
+
+      if (section !== "achievements") {
+        document.querySelectorAll(`#${section}Grid .gallery-item`).forEach((el, i) => {
+          el.classList.toggle('hidden', i >= 6);
+        });
+      }
+    }
+
+    function toggleViewAll() {
+  viewAllActive = !viewAllActive;
+  const items = document.querySelectorAll(`#${currentSection}Grid .gallery-item`);
+  const btn = document.querySelector(".view-all-btn");
+
+  if (viewAllActive) {
+    items.forEach(i => {
+      i.classList.remove("hidden");
+      i.style.animation = "fadeInZoom 0.6s ease";
+    });
+    btn.textContent = "View Less";
+  } else {
+    if (currentSection !== "achievements") {
+      items.forEach((el, i) => el.classList.toggle("hidden", i >= 6));
+    }
+    btn.textContent = "View All";
+  }
+}
+
+    function filterAchievement(category) {
+      document.querySelectorAll('.sub-filter-buttons button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const allItems = document.querySelectorAll(".ach-item");
+      if (category === "all") {
+        allItems.forEach(i => i.classList.remove("hidden"));
+      } else {
+        allItems.forEach(i => {
+          i.classList.toggle("hidden", !i.classList.contains(category));
+        });
+      }
+    }
+  </script>
+  <script>
+  // Existing script...
+
+  // Fullscreen image viewer logic
+  document.querySelectorAll('.gallery-item a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      const img = this.querySelector('img');
+      if (img) {
+        e.preventDefault();
+        const fullImg = img.getAttribute('src');
+        openFullscreen(fullImg);
+      }
+    });
+  });
+
+  function openFullscreen(src) {
+    const modal = document.getElementById("fullscreenModal");
+    const modalImg = document.getElementById("fullscreenImage");
+    modalImg.src = src;
+    modal.style.display = "flex";
+  }
+
+  function closeFullscreen() {
+    document.getElementById("fullscreenModal").style.display = "none";
+    document.getElementById("fullscreenImage").src = "";
+  }
+</script>
+<script>
+  // Fullscreen image viewer logic
+  document.querySelectorAll('.gallery-item a, .gallery-item').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const img = this.querySelector('img');
+      if (img) {
+        openFullscreen(img.getAttribute('src'));
+      }
+    });
+  });
+
+  function openFullscreen(src) {
+    const modal = document.getElementById("fullscreenModal");
+    const modalImg = document.getElementById("fullscreenImage");
+    modalImg.src = src;
+    modal.style.display = "flex";
+  }
+
+  function closeFullscreen() {
+    const modal = document.getElementById("fullscreenModal");
+    modal.style.display = "none";
+    document.getElementById("fullscreenImage").src = "";
+  }
+</script>
+
+<script>
+  // Fullscreen video popup
+  document.querySelectorAll('.gallery-item.video a, .gallery-item.video').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const videoURL = this.getAttribute('data-video');
+      if (videoURL) openVideoPopup(videoURL);
+    });
+  });
+
+  function openVideoPopup(url) {
+    const modal = document.getElementById("fullscreenVideoModal");
+    const player = document.getElementById("videoPlayer");
+
+    // Autoplay if YouTube or MP4
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+      const embedUrl = convertToYouTubeEmbed(url);
+      player.src = embedUrl + "?autoplay=1&rel=0";
+    } else {
+      player.src = url + "?autoplay=1";
+    }
+
+    modal.style.display = "flex";
+  }
+
+  function closeVideoPopup() {
+    const modal = document.getElementById("fullscreenVideoModal");
+    const player = document.getElementById("videoPlayer");
+    modal.style.display = "none";
+    player.src = "";
+  }
+
+  function convertToYouTubeEmbed(url) {
+    if (url.includes("watch?v=")) {
+      return url.replace("watch?v=", "embed/");
+    } else if (url.includes("youtu.be")) {
+      return url.replace("youtu.be/", "youtube.com/embed/");
+    }
+    return url;
+  }
+</script>
+</body>
+
+</html>

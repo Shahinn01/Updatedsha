@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Festivals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS CSS (Animate on Scroll) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./Styles/church-footer.css" rel="stylesheet">
+ <!-- Glightbox -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+
+ <link rel="stylesheet" href="../CSS/Sub_Index_Styles.css">
+  <link rel="stylesheet" href="../CSS/Footer.css">
+  <style>
+    body {
+      background: #fafafa;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+    .header {
+      background: #4b6cb7;
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.1rem;
+    }
+
+    .festival-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .festival-card {
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
+
+    .festival-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .festival-card img {
+      width: 100%;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .festival-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .festival-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a237e;
+      margin-bottom: 12px;
+    }
+
+    .festival-desc {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    /* 🌈 Festival Background */
+.festival-section {
+  background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+  padding: 60px 15px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ✨ Festival Card Styling */
+.festival-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.festival-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+/* 💫 Glow on hover */
+.festival-card:hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* 🖼 Image Styling */
+.festival-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* 📝 Title Styling */
+.festival-card h3 {
+  font-size: 1.5rem;
+  color: #4c3a2d;
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.festival-card h3::before {
+  content: "\f272"; /* Font Awesome church icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #d19d54;
+}
+
+/* 📖 Description */
+.festival-card p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* 📱 Responsive Grid */
+.festival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* 🎯 Scroll Reveal Animations */
+.festival-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.festival-card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌐 Mobile Friendly */
+@media (max-width: 768px) {
+  .festival-card {
+    padding: 20px;
+  }
+  .festival-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Optional: Light Divider */
+.festival-section hr {
+  border-top: 1px solid #ccc;
+  margin: 30px 0;
+}
+
+      </style>
+</head>
+
+<body>
+   <!-- 🔄 Preloader -->
+<div id="loader" class="startingpreloader">
+  <div class="preloader" id="preloader">
+ <!-- Light beam -->
+  <div class="light-beam"></div>
+
+  <!-- Doves -->
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+
+  <!-- Cross -->
+  <div class="cross"></div>
+
+
+    <!-- Church Name -->
+    <div class="church-name">CSI Church Mangarai</div>
+
+    <!-- Animated "Lighting the way..." -->
+    <div class="subtitle">Lighting the way...</div>
+
+    <!-- Multicolor Loading Bar -->
+    <div class="level-up-loader">
+      <div class="progress"></div>
+    </div>
+
+    <!-- Animated Loading Message -->
+    <div class="loading-text">Loading God’s love…</div>
+
+    <!-- Burst Effect -->
+    <div class="burst" id="burst"></div>
+  </div>
+</div>
+
+
+<!-- 🧾 Main Content Wrapper -->
+<div id="main-content" style="display: none;">
+  <!-- Your index.html content goes here -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 fixed-top">
+      <div class="container-fluid">
+
+        <!-- Brand: Logos + Title -->
+        <div class="navbar-brand d-flex align-items-center">
+          <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" alt="Church Logo" >
+          <span class="fw-bold text-white ms-1">CSI PASTORATE CHURCH</span>
+          <a href="https://csikkd.org/" target="_blank">
+            <img src="../Assests/Images/Logo/CSILOGO.png" alt="CSI Logo" >
+          </a>
+        </div>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse justify-content-end text-end" id="navbarMenu">
+          <ul class="navbar-nav ms-auto ">
+
+            <li class="nav-item"><a class="nav-link" href="../Index.html">Home</a></li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">About</a>
+              <ul class="dropdown-menu ms-auto text-end ">
+                <li><a class="dropdown-item" href="./History.html">History</a></li>
+                <li><a class="dropdown-item" href="./Mission_Vision.html">Mission & Vision</a></li>
+                <li><a class="dropdown-item" href="./Our_Beliefs.html">Our Beliefs</a></li>
+                <li><a class="dropdown-item" href="./Gallery.html">Gallery</li>
+              </ul>
+            </li>
+
+            <!-- People Who Served Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">People Who Served</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Past_Pastors.html">Past Pastors</a></li>
+                <li><a class="dropdown-item" href="#">Church Elders</a></li>
+                <li><a class="dropdown-item" href="./Key_Contribution.html">Key Contributors</a></li>
+              </ul>
+            </li>
+
+            <!-- Committee Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Present
+                Committee</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Pastor.html">Pastor</a></li>
+                <li><a class="dropdown-item" href="./Secretary.html">Secretary</a></li>
+                <li><a class="dropdown-item" href="./Treasurer.html">Treasurer</a></li>
+                <li><a class="dropdown-item" href="./Committee_Members.html">Committee Members</a></li>
+              </ul>
+            </li>
+
+              <!-- events -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Events</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                               <li><a class="dropdown-item" href="./Festivals.html">Festivals</a></li>
+                <li><a class="dropdown-item" href="./Event_Notice.html">Upcomming Events</a></li>
+            
+              </ul>
+            </li>
+
+            <!-- Reach Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reach Us</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="#">Contact Info</a></li>
+                <li><a class="dropdown-item" href="#">Location</a></li>
+                <li><a class="dropdown-item" href="./Service_Timing.html">Service Timings</a></li>
+              </ul>
+            </li>
+
+          
+
+            <!-- Social Media Icons -->
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.instagram.com/csi_pastorate_church_mangarai?igsh=MTNkdGkyMms2eDU0cQ=="><i
+                  class="fab fa-instagram"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="https://www.facebook.com/share/1CAV23YxLN/"><i
+                  class="fab fa-facebook-f"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.youtube.com/@csipastoratechurchmangarai"><i class="fab fa-youtube"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="mailto:csipastoratechurchmangarai@gmail.com">
+                <i class="fas fa-envelope"></i></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Lightbox -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // AOS Initialization
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  });
+</script>
+
+
+<!-- Video Background -->
+ <!-- Video Background Section -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="../Assests/Videos/Promo.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+      </video>
+      
+    </div>
+
+
+ <!-- 🔔 Notice Button -->
+    <div id="notice-button" onclick="toggleNotice()">
+      <i class="fas fa-bell"></i>
+    </div>
+
+    <!-- 📋 Notice Sidebar -->
+    <div id="notice-sidebar">
+      <div class="notice-header">
+        <h5>📢 Announcements</h5>
+        <button onclick="toggleNotice()" class="close-btn">&times;</button>
+      </div>
+
+      <!-- 👇 Add this iframe to load the notice page -->
+      <iframe src="./Notice_Content.html" width="100%" height="400px" style="border: none;"></iframe>
+      </div>
+<script>
+  function toggleNotice() {
+    const sidebar = document.getElementById('notice-sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', () => {
+    const sidebar = document.getElementById('notice-sidebar');
+    const videoSection = document.querySelector('.video-background');
+    const endOfVideo = videoSection.offsetTop + videoSection.offsetHeight;
+
+    if (window.scrollY > endOfVideo && sidebar.classList.contains('active')) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
+      <!-- Your content -->
+
+
+
+ <header class="header">
+    <h1><i class="fas fa-church me-2"></i>Annual Church Festivals</h1>
+    <p>Journey from New Year to Christmas in faith, fellowship, & celebration</p>
+  </header>
+
+  <div class="festival-grid">
+    <!-- New Year -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?watch-night,church" alt="New Year Watch Night">
+      <div class="festival-content">
+        <div class="festival-title">New Year</div>
+        <div class="festival-desc">
+          The Watch Night covenant service begins at 11 p.m., followed by Holy Communion at midnight. On January 1st at 8 a.m., thousands gather to welcome the New Year with prayers and blessings. May God’s peace, prosperity, and love fill your year ahead.
+        </div>
+      </div>
+    </div>
+
+    <!-- Ash Wednesday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?ash-wednesday,church" alt="Ash Wednesday">
+      <div class="festival-content">
+        <div class="festival-title">Ash Wednesday</div>
+        <div class="festival-desc">
+          The start of Lent at 7 a.m., this day marks 40 days of repentance with ashes placed on foreheads. Revival meetings nourish hearts and minds, meditating on the cross and renewing spiritual strength. "Repent, and believe in the Gospel."
+        </div>
+      </div>
+    </div>
+
+    <!-- Palm Sunday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?palm-sunday,procession" alt="Palm Sunday Procession">
+      <div class="festival-content">
+        <div class="festival-title">Palm Sunday</div>
+        <div class="festival-desc">
+          Holy Communion is followed by a grand procession with palm leaves and crosses. Over 4,000 members sing Hosanna and recite scripture as we commemorate Jesus’ triumphal entry into Jerusalem with joyous praise.
+        </div>
+      </div>
+    </div>
+
+    <!-- Good Friday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?good-friday,church" alt="Good Friday Meditation">
+      <div class="festival-content">
+        <div class="festival-title">Good Friday</div>
+        <div class="festival-desc">
+          Beginning at 7 a.m., with a 3‑hour meditation from 11 a.m.–3 p.m. on the Seven Last Words of Christ. The local business community closes, and thousands gather in somber reflection on the sacrifice of Jesus.
+        </div>
+      </div>
+    </div>
+
+    <!-- Easter Sunday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?easter-sunday,church" alt="Easter Sunday">
+      <div class="festival-content">
+        <div class="festival-title">Easter Sunday</div>
+        <div class="festival-desc">
+          Featuring two Holy Communion services at 4 a.m. and 8 a.m., celebrating Christ’s resurrection. Our congregation rejoices in renewed faith and hope, affirming the victory of life over death.
+        </div>
+      </div>
+    </div>
+
+    <!-- Prayer Hall Dedication -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?church,prayer-hall" alt="Prayer Hall Dedication">
+      <div class="festival-content">
+        <div class="festival-title">Prayer Hall Dedication</div>
+        <div class="festival-desc">
+          On May 1st, the prayer hall is dedicated with a grand ceremony and fellowship breakfast. It’s a day of unity and thanksgiving as our space is consecrated for prayer, instruction, and spiritual growth.
+        </div>
+      </div>
+    </div>
+
+    <!-- VBS -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?vbs,children,bible" alt="Vacation Bible School">
+      <div class="festival-content">
+        <div class="festival-title">Vacation Bible School (VBS)</div>
+        <div class="festival-desc">
+          "Let the children come..." – Mark 10:14. VBS is a themed, Bible-centered summer school filled with interactive lessons, fun activities, and spiritual development, fostering faith in our youngest church members.
+        </div>
+      </div>
+    </div>
+
+    <!-- Missionary Sunday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?missionary,sunday,church" alt="Missionary Sunday">
+      <div class="festival-content">
+        <div class="festival-title">Missionary Sunday</div>
+        <div class="festival-desc">
+          Celebrated in the second week of June, this day highlights global mission work. We hear powerful testimonies, learn about mission fields, and recommit ourselves to praying, giving, and spreading God’s love.
+        </div>
+      </div>
+    </div>
+
+    <!-- Harvest Festival -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?harvest,festival,church" alt="Harvest Festival">
+      <div class="festival-content">
+        <div class="festival-title">Harvest Festival</div>
+        <div class="festival-desc">
+          A day of thanksgiving, adorned with fruits and produce. Approximately 50 family-run stalls contribute offerings sold by auction—the proceeds are added to our Church Building Fund. A vibrant celebration of God’s provision.
+        </div>
+      </div>
+    </div>
+
+    <!-- Church Dedication Day -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?church,anniversary,celebration" alt="Church Dedication Day">
+      <div class="festival-content">
+        <div class="festival-title">Church Dedication Day</div>
+        <div class="festival-desc">
+          On September 27th, we celebrate our anniversary and the CSI formation with morning Holy Communion at 7:30 a.m., followed by fellowship breakfast, evening cultural programs, gospel enactments, and illuminated worship.
+        </div>
+      </div>
+    </div>
+
+    <!-- Asanam (Unity Feast) -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?unity,feast,church" alt="Unity Feast">
+      <div class="festival-content">
+        <div class="festival-title">Asanam (Annual Unity Feast)</div>
+        <div class="festival-desc">
+          After our anniversary, we feed 20,000+ people—congregation and communities alike. This feast extends our love to orphanages and the needy, fulfilling Jesus’ command: “You give them something to eat.” (Matt. 14:16).
+        </div>
+      </div>
+    </div>
+
+    <!-- Women Fellowship Sunday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?women,church,fellowship" alt="Women's Fellowship Sunday">
+      <div class="festival-content">
+        <div class="festival-title">Women Fellowship Sunday</div>
+        <div class="festival-desc">
+          Rooted in the vision of CSI Tamil Nadu (1947), this celebration empowers women in leadership and spiritual growth. Services feature women-led worship and encourage unity, culture, and faith.
+        </div>
+      </div>
+    </div>
+
+    <!-- Sunday School Activities -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?sunday-school,children" alt="Sunday School Activities">
+      <div class="festival-content">
+        <div class="festival-title">Sunday School Activities</div>
+        <div class="festival-desc">
+          A nurturing space for children’s spiritual growth through Bible lessons, games, and performances. Participants showcase scripture teachings and are celebrated with awards and encouragement.
+        </div>
+      </div>
+    </div>
+
+    <!-- Senior Citizen Sunday -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?senior,citizens,church" alt="Senior Citizen Sunday">
+      <div class="festival-content">
+        <div class="festival-title">Senior Citizen Sunday</div>
+        <div class="festival-desc">
+          Celebrated in the second week of November, honoring 500+ elderly with shawls, bouquets, gifts, and a fellowship lunch. A heartfelt gesture of respect and gratitude towards our cherished seniors.
+        </div>
+      </div>
+    </div>
+
+    <!-- Christmas -->
+    <div class="festival-card">
+      <img src="https://source.unsplash.com/featured/?christmas,church" alt="Christmas Celebration">
+      <div class="festival-content">
+        <div class="festival-title">Christmas</div>
+        <div class="festival-desc">
+          Starting December 1st with carol rounds until the 22nd, and a candlelight service. Christmas Day features two worship services at 4 a.m. and 8 a.m., followed by Parish Tea, games, and gift distribution across teams and branches.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Footer Section -->
+ <!-- FOOTER SECTION START -->
+    <section class="footer-wrapper">
+      <footer class="footer" data-aos="fade-up">
+        <div class="container">
+          <div class="row text-center text-md-start">
+            <!-- Logo/About -->
+            <div class="col-md-3 footer-section">
+              <div class="footer-logo mb-3">
+                <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" loading="lazy" alt="Church Logo">
+              </div>
+              <p>Welcome to our church community. Stay connected through our website and events.</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-3 footer-section">
+              <h5>Contact</h5>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Church Street, City</p>
+              <p><i class="fas fa-phone"></i> +91 9876543210</p>
+              <p><i class="fas fa-envelope"></i> church@email.com</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 footer-section footer-links">
+              <h5>Quick Links</h5>
+              <a href="./Index.html">Home</a>
+              <a href="./History.html">About</a>
+              <a href="#">Events</a>
+              <a href="./Gallery.html">Gallery</a>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-4 footer-section">
+              <h5>Newsletter</h5>
+              <p>Subscribe to stay updated with our news and events.</p>
+              <form class="d-flex">
+                <input type="email" placeholder="Your Email" class="form-control me-2 newsletter-input">
+                <button type="submit" class="btn btn-warning glow-btn">Subscribe</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Donation Box (New Format) -->
+          <div class="col-md-4 footer-section footer-donation m-auto text-center" data-aos="fade-up">
+            <h5>Donation Details</h5>
+            <!-- <p><strong>Bank:</strong> ABC Bank</p>
+            <p><strong>Account No:</strong> 1234567890</p>
+            <p><strong>IFSC:</strong> ABCD0123456</p> -->
+            <button class="btn btn-warning glow-btn mt-2" onclick="toggleDonatePopup()">Donate Now</button>
+          </div>
+
+
+          <!-- Social Icons -->
+          <div class="footer-social mt-4 text-center">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <!-- Developer Link -->
+          <div class="footer-bottom mt-4">
+            © 2025 CSI Pastorate Church| All Rights Reserved </div>
+            <div class="footer-bottom mt-0"><span style="color: #ffc107;"> Developed by</span>
+            <span class="developer-name" onclick="toggleDevPopup()">Shahin N</span>
+
+          </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div id="backToTop" onclick="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Developer Modal -->
+        <div class="dev-modal-overlay" id="devModal">
+
+          <div class="dev-popup popup-animate">
+            <button class="close-btn" onclick="toggleDevPopup()">&times;</button>
+            <div class="dev-profile">
+              <!-- Developer Flip Card -->
+              <div class="flip-card-container">
+                <div class="flip-card" id="devFlipCard">
+                  <div class="flip-card-front">
+                    <img src="../Assests/Images/Footer/Developer.jpg" loading="lazy" alt="Shahin N" class="dev-image" />
+                  </div>
+                  <div class="flip-card-back">
+                    <h4>Shahin N</h4>
+                    <p>Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dev-socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Donate Modal -->
+        <div class="donate-modal-overlay" id="donateModal">
+
+          <div class="donate-popup">
+            <button class="close-btn" onclick="toggleDonatePopup()">&times;</button>
+            <h4 class="text-glow">Donate to Support</h4>
+            <p>Bank Name: XYZ Bank<br>Acc No: 1234567890<br>IFSC: XYZB000123</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- FOOTER SECTION END -->
+
+    <!-- JS Scripts -->
+    <script>
+      // Developer Modal
+      function toggleDevPopup() {
+        document.getElementById('devModal').classList.toggle('active');
+      }
+
+      // Donate Modal
+      function toggleDonatePopup() {
+        document.getElementById('donateModal').classList.toggle('active');
+      }
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+      window.onscroll = () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = "block";
+        else backToTopBtn.style.display = "none";
+      };
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+
+
+    <script>
+      let lastTap = 0;
+      const card = document.getElementById('devFlipCard');
+
+      card.addEventListener('touchend', function () {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+
+        if (tapLength < 300 && tapLength > 0) {
+          card.classList.toggle('zoomed');
+        }
+        lastTap = currentTime;
+      });
+    </script>
+    <!-- Developer Modal and Back to Top -->
+<script>
+  document.querySelector('.developer-link').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.add('active');
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.remove('active');
+  });
+
+  const backBtn = document.getElementById('backToTop');
+  window.onscroll = () => {
+    backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  };
+  backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+</script>
+
+<script>
+  // Developer Popup Toggle
+  document.getElementById('developerLink').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'flex';
+  });
+
+  document.querySelector('#devModal .close-btn').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target.id === 'devModal') {
+      document.getElementById('devModal').style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  // Dev Modal Zoom / Flip
+  const flipCard = document.getElementById('devFlipCard');
+  const devImage = document.querySelector('.dev-image');
+
+  let lastTap = 0;
+  let isZoomed = false;
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+
+  devImage.addEventListener('touchstart', function (e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+      e.preventDefault();
+      isZoomed = !isZoomed;
+      devImage.classList.toggle('zoomed', isZoomed);
+    }
+
+    lastTap = currentTime;
+  });
+</script>
+
+<!-- Tooltip Initialization -->
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+<!-- Enable repeated animation -->
+ <script>
+  AOS.init({ once: false }); // Enable repeated animation
+</script>
+    
+<!-- to avoid the overflow width -->
+
+  <!-- // end of loading div -->
+  </div>
+  <!-- Preloading script -->
+ <script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const burst = document.getElementById("burst");
+
+    setTimeout(() => {
+      burst.classList.add("show");
+      setTimeout(() => {
+        preloader.style.transition = "opacity 0.5s ease";
+        preloader.style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("main-content").style.display = "block";
+
+          // 👇 Re-initialize AOS here
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh(); // or AOS.init() if not already done
+          }
+
+        }, 300);
+      }, 300);
+    }, 700);
+  });
+  
+</script>
+
+
+<!-- preloading end -->
+
+  <!-- festival script -->
+  
+  <script>
+  // Simple scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.festival-card').forEach(card => {
+    observer.observe(card);
+  });
+</script>
+
+</body>
+
+</html>

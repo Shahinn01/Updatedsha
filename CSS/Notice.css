@@ -1,0 +1,99 @@
+/* 🔹 Floating Notice Button */
+.notice-toggle-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 99;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+.notice-toggle-btn:hover {
+  background-color: #003cff;
+}
+
+/* 🔸 Sidebar Container */
+.notice-sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  height: 100%;
+  width: 320px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  z-index: 100;
+  overflow-y: auto;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+  transition: right 0.4s ease-in-out;
+}
+.notice-sidebar.show {
+  right: 0;
+}
+
+/* 🔸 Notice Box Headers */
+.notice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notice-header h5 {
+  margin: 0;
+}
+.btn-close {
+  background-color: white;
+}
+
+/* 🔸 Scrollable Lists */
+.notice-section {
+  margin-top: 20px;
+}
+.notice-section h6 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+.scrolling-list {
+  list-style: none;
+  padding-left: 10px;
+  height: 150px;
+  overflow: hidden;
+  animation: scrollUp 20s linear infinite;
+}
+.scrolling-list li {
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+/* 🔸 Animation */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* 🔸 Different Background for Upcoming Events */
+.notice-section.upcoming {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+  .notice-sidebar {
+    width: 100%;
+  }
+}
+

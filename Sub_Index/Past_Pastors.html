@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Past Pastors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 & Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS CSS (Animate on Scroll) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <!-- CSS Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./Styles/church-footer.css" rel="stylesheet">
+ <!-- Glightbox -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="../CSS/Sub_Index_Styles.css">
+  <link rel="stylesheet" href="../CSS/Footer.css">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #e0ecff, #f8f9fa);
+      color: #333;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .pastor-card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      margin-bottom: 2rem;
+    }
+
+    .pastor-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      padding: 4px;
+      background: conic-gradient(from 180deg at 50% 50%, #8EC5FC, #E0C3FC, #F9F871, #8EC5FC);
+      margin-bottom: 1rem;
+      transition: transform 0.6s ease;
+    }
+
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .profile-img:hover img {
+      transform: rotate(3deg) scale(1.05);
+    }
+
+    .contact-icons i {
+      font-size: 1.2rem;
+      margin: 0 8px;
+      color: #6c757d;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    .contact-icons i:hover {
+      color: #007bff;
+    }
+
+    @media (max-width: 768px) {
+      .pastor-card {
+        text-align: center;
+      }
+
+      .profile-img {
+        margin: 0 auto 1rem;
+      }
+    }
+    .profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  padding: 4px;
+  background: #fff;
+  margin-bottom: 1rem;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 1), 0 0 30px rgba(0, 123, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+  }
+}
+.rainbow-border {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding: 5px;
+  background: conic-gradient(from 0deg, red, orange, yellow, green, cyan, blue, violet, red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotateRainbow 5s linear infinite;
+}
+
+@keyframes rotateRainbow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+}
+      </style>
+</head>
+
+<body>
+  <!-- 🔄 Preloader -->
+<div id="loader" class="startingpreloader">
+  <div class="preloader" id="preloader">
+ <!-- Light beam -->
+  <div class="light-beam"></div>
+
+  <!-- Doves -->
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+  <div class="dove"></div>
+
+  <!-- Cross -->
+  <div class="cross"></div>
+
+
+    <!-- Church Name -->
+    <div class="church-name">CSI Church Mangarai</div>
+
+    <!-- Animated "Lighting the way..." -->
+    <div class="subtitle">Lighting the way...</div>
+
+    <!-- Multicolor Loading Bar -->
+    <div class="level-up-loader">
+      <div class="progress"></div>
+    </div>
+
+    <!-- Animated Loading Message -->
+    <div class="loading-text">Loading God’s love…</div>
+
+    <!-- Burst Effect -->
+    <div class="burst" id="burst"></div>
+  </div>
+</div>
+
+
+<!-- 🧾 Main Content Wrapper -->
+<div id="main-content" style="display: none;">
+  <!-- Your index.html content goes here -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-3 fixed-top">
+      <div class="container-fluid">
+
+        <!-- Brand: Logos + Title -->
+        <div class="navbar-brand d-flex align-items-center">
+          <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" alt="Church Logo" >
+          <span class="fw-bold text-white ms-1">CSI PASTORATE CHURCH</span>
+          <a href="https://csikkd.org/" target="_blank">
+            <img src="../Assests/Images/Logo/CSILOGO.png" alt="CSI Logo" >
+          </a>
+        </div>
+
+        <!-- Toggle Button for Mobile -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu Items -->
+        <div class="collapse navbar-collapse justify-content-end text-end" id="navbarMenu">
+          <ul class="navbar-nav ms-auto ">
+
+            <li class="nav-item"><a class="nav-link" href="../Index.html">Home</a></li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">About</a>
+              <ul class="dropdown-menu ms-auto text-end ">
+                <li><a class="dropdown-item" href="./History.html">History</a></li>
+                <li><a class="dropdown-item" href="./Mission_Vision.html">Mission & Vision</a></li>
+                <li><a class="dropdown-item" href="./Our_Beliefs.html">Our Beliefs</a></li>
+                <li><a class="dropdown-item" href="./Gallery.html">Gallery</li>
+              </ul>
+            </li>
+
+            <!-- People Who Served Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">People Who Served</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Past_Pastors.html">Past Pastors</a></li>
+                <li><a class="dropdown-item" href="#">Church Elders</a></li>
+                <li><a class="dropdown-item" href="./Key_Contribution.html">Key Contributors</a></li>
+              </ul>
+            </li>
+
+            <!-- Committee Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Present
+                Committee</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="./Pastor.html">Pastor</a></li>
+                <li><a class="dropdown-item" href="./Secretary.html">Secretary</a></li>
+                <li><a class="dropdown-item" href="./Treasurer.html">Treasurer</a></li>
+                <li><a class="dropdown-item" href="./Committee_Members.html">Committee Members</a></li>
+              </ul>
+            </li>
+
+              <!-- events -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Events</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                               <li><a class="dropdown-item" href="./Festivals.html">Festivals</a></li>
+                <li><a class="dropdown-item" href="./Event_Notice.html">Upcomming Events</a></li>
+            
+              </ul>
+            </li>
+
+            <!-- Reach Us Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Reach Us</a>
+              <ul class="dropdown-menu ms-auto text-end">
+                <li><a class="dropdown-item" href="#">Contact Info</a></li>
+                <li><a class="dropdown-item" href="#">Location</a></li>
+                <li><a class="dropdown-item" href="./Service_Timing.html">Service Timings</a></li>
+              </ul>
+            </li>
+
+          
+
+            <!-- Social Media Icons -->
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.instagram.com/csi_pastorate_church_mangarai?igsh=MTNkdGkyMms2eDU0cQ=="><i
+                  class="fab fa-instagram"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="https://www.facebook.com/share/1CAV23YxLN/"><i
+                  class="fab fa-facebook-f"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link"
+                href="https://www.youtube.com/@csipastoratechurchmangarai"><i class="fab fa-youtube"></i></a></li>
+            <li class="nav-item social-icons"><a class="nav-link" href="mailto:csipastoratechurchmangarai@gmail.com">
+                <i class="fas fa-envelope"></i></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!-- AOS CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+<!-- Lightbox -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // AOS Initialization
+  document.addEventListener('DOMContentLoaded', function () {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  });
+</script>
+
+
+<!-- Video Background -->
+ <!-- Video Background Section -->
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="../Assests/Videos/Promo.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+      </video>
+      
+    </div>
+
+
+ <!-- 🔔 Notice Button -->
+    <div id="notice-button" onclick="toggleNotice()">
+      <i class="fas fa-bell"></i>
+    </div>
+
+    <!-- 📋 Notice Sidebar -->
+    <div id="notice-sidebar">
+      <div class="notice-header">
+        <h5>📢 Announcements</h5>
+        <button onclick="toggleNotice()" class="close-btn">&times;</button>
+      </div>
+
+      <!-- 👇 Add this iframe to load the notice page -->
+      <iframe src="./Notice_Content.html" width="100%" height="400px" style="border: none;"></iframe>
+      </div>
+<script>
+  function toggleNotice() {
+    const sidebar = document.getElementById('notice-sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  window.addEventListener('scroll', () => {
+    const sidebar = document.getElementById('notice-sidebar');
+    const videoSection = document.querySelector('.video-background');
+    const endOfVideo = videoSection.offsetTop + videoSection.offsetHeight;
+
+    if (window.scrollY > endOfVideo && sidebar.classList.contains('active')) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
+      <!-- Your content -->
+
+
+
+
+
+
+
+
+
+<section class="py-5">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="fw-bold">Honoring Our Past Pastors</h2>
+        <p class="text-muted">A tribute to those who led with wisdom and grace</p>
+      </div>
+
+      <div class="row">
+        <!-- Pastor Card 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="pastor-card text-center">
+            <div class="profile-img mx-auto">
+              <img src="https://i.pravatar.cc/300?img=10" alt="Pastor 1">
+            </div>
+            <h5 class="fw-semibold mb-0">Rev. John Paul</h5>
+            <small class="text-muted">1990 – 1998</small>
+            <p class="mt-2">Known for his deep sermons and humble leadership.</p>
+            <div class="contact-icons">
+              <i class="fas fa-envelope"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fas fa-phone"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastor Card 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="pastor-card text-center">
+            <div class="profile-img mx-auto">
+              <img src="https://i.pravatar.cc/300?img=20" alt="Pastor 2">
+            </div>
+            <h5 class="fw-semibold mb-0">Rev. Mary Joseph</h5>
+            <small class="text-muted">1999 – 2005</small>
+            <p class="mt-2">Inspired the youth and led community outreach programs.</p>
+            <div class="contact-icons">
+              <i class="fas fa-envelope"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fas fa-phone"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastor Card 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="pastor-card text-center">
+            <div class="profile-img mx-auto">
+              <img src="https://i.pravatar.cc/300?img=30" alt="Pastor 3">
+            </div>
+            <h5 class="fw-semibold mb-0">Rev. Samuel Dev</h5>
+            <small class="text-muted">2006 – 2012</small>
+            <p class="mt-2">Brought innovation and strong spiritual guidance.</p>
+            <div class="contact-icons">
+              <i class="fas fa-envelope"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fas fa-phone"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastor Card 4 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="pastor-card text-center">
+            <div class="profile-img mx-auto">
+              <img src="https://i.pravatar.cc/300?img=40" alt="Pastor 4">
+            </div>
+            <h5 class="fw-semibold mb-0">Rev. Grace Elijah</h5>
+            <small class="text-muted">2013 – 2016</small>
+            <p class="mt-2">Led with compassion and empowered the women’s ministry.</p>
+            <div class="contact-icons">
+              <i class="fas fa-envelope"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fas fa-phone"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastor Card 5 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="pastor-card text-center">
+            <div class="profile-img mx-auto">
+              <img src="https://i.pravatar.cc/300?img=50" alt="Pastor 5">
+            </div>
+            <h5 class="fw-semibold mb-0">Rev. Thomas Alex</h5>
+            <small class="text-muted">2017 – 2022</small>
+            <p class="mt-2">Focused on family values and strengthened congregation unity.</p>
+            <div class="contact-icons">
+              <i class="fas fa-envelope"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fas fa-phone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Footer Section -->
+ <!-- FOOTER SECTION START -->
+    <section class="footer-wrapper">
+      <footer class="footer" data-aos="fade-up">
+        <div class="container">
+          <div class="row text-center text-md-start">
+            <!-- Logo/About -->
+            <div class="col-md-3 footer-section">
+              <div class="footer-logo mb-3">
+                <img src="../Assests/Images/Logo/CHURCHLOGO.jpg" loading="lazy" alt="Church Logo">
+              </div>
+              <p>Welcome to our church community. Stay connected through our website and events.</p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-3 footer-section">
+              <h5>Contact</h5>
+              <p><i class="fas fa-map-marker-alt"></i> 123 Church Street, City</p>
+              <p><i class="fas fa-phone"></i> +91 9876543210</p>
+              <p><i class="fas fa-envelope"></i> church@email.com</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 footer-section footer-links">
+              <h5>Quick Links</h5>
+              <a href="./Index.html">Home</a>
+              <a href="./History.html">About</a>
+              <a href="#">Events</a>
+              <a href="./Gallery.html">Gallery</a>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-md-4 footer-section">
+              <h5>Newsletter</h5>
+              <p>Subscribe to stay updated with our news and events.</p>
+              <form class="d-flex">
+                <input type="email" placeholder="Your Email" class="form-control me-2 newsletter-input">
+                <button type="submit" class="btn btn-warning glow-btn">Subscribe</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Donation Box (New Format) -->
+          <div class="col-md-4 footer-section footer-donation m-auto text-center" data-aos="fade-up">
+            <h5>Donation Details</h5>
+            <!-- <p><strong>Bank:</strong> ABC Bank</p>
+            <p><strong>Account No:</strong> 1234567890</p>
+            <p><strong>IFSC:</strong> ABCD0123456</p> -->
+            <button class="btn btn-warning glow-btn mt-2" onclick="toggleDonatePopup()">Donate Now</button>
+          </div>
+
+
+          <!-- Social Icons -->
+          <div class="footer-social mt-4 text-center">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <!-- Developer Link -->
+          <div class="footer-bottom mt-4">
+            © 2025 CSI Pastorate Church| All Rights Reserved </div>
+            <div class="footer-bottom mt-0"><span style="color: #ffc107;"> Developed by</span>
+            <span class="developer-name" onclick="toggleDevPopup()">Shahin N</span>
+
+          </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div id="backToTop" onclick="scrollToTop()">
+          <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Developer Modal -->
+        <div class="dev-modal-overlay" id="devModal">
+
+          <div class="dev-popup popup-animate">
+            <button class="close-btn" onclick="toggleDevPopup()">&times;</button>
+            <div class="dev-profile">
+              <!-- Developer Flip Card -->
+              <div class="flip-card-container">
+                <div class="flip-card" id="devFlipCard">
+                  <div class="flip-card-front">
+                    <img src="../Assests/Images/Footer/Developer.jpg" loading="lazy" alt="Shahin N" class="dev-image" />
+                  </div>
+                  <div class="flip-card-back">
+                    <h4>Shahin N</h4>
+                    <p>Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dev-socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Donate Modal -->
+        <div class="donate-modal-overlay" id="donateModal">
+
+          <div class="donate-popup">
+            <button class="close-btn" onclick="toggleDonatePopup()">&times;</button>
+            <h4 class="text-glow">Donate to Support</h4>
+            <p>Bank Name: XYZ Bank<br>Acc No: 1234567890<br>IFSC: XYZB000123</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- FOOTER SECTION END -->
+
+    <!-- JS Scripts -->
+    <script>
+      // Developer Modal
+      function toggleDevPopup() {
+        document.getElementById('devModal').classList.toggle('active');
+      }
+
+      // Donate Modal
+      function toggleDonatePopup() {
+        document.getElementById('donateModal').classList.toggle('active');
+      }
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById("backToTop");
+      window.onscroll = () => {
+        if (window.scrollY > 300) backToTopBtn.style.display = "block";
+        else backToTopBtn.style.display = "none";
+      };
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+
+
+    <script>
+      let lastTap = 0;
+      const card = document.getElementById('devFlipCard');
+
+      card.addEventListener('touchend', function () {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+
+        if (tapLength < 300 && tapLength > 0) {
+          card.classList.toggle('zoomed');
+        }
+        lastTap = currentTime;
+      });
+    </script>
+    <!-- Developer Modal and Back to Top -->
+<script>
+  document.querySelector('.developer-link').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.add('active');
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.querySelector('.footer-dev-modal').classList.remove('active');
+  });
+
+  const backBtn = document.getElementById('backToTop');
+  window.onscroll = () => {
+    backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  };
+  backBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+</script>
+
+<script>
+  // Developer Popup Toggle
+  document.getElementById('developerLink').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'flex';
+  });
+
+  document.querySelector('#devModal .close-btn').addEventListener('click', function () {
+    document.getElementById('devModal').style.display = 'none';
+  });
+
+  window.addEventListener('click', function (e) {
+    if (e.target.id === 'devModal') {
+      document.getElementById('devModal').style.display = 'none';
+    }
+  });
+</script>
+
+<script>
+  // Dev Modal Zoom / Flip
+  const flipCard = document.getElementById('devFlipCard');
+  const devImage = document.querySelector('.dev-image');
+
+  let lastTap = 0;
+  let isZoomed = false;
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+
+  devImage.addEventListener('touchstart', function (e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+      e.preventDefault();
+      isZoomed = !isZoomed;
+      devImage.classList.toggle('zoomed', isZoomed);
+    }
+
+    lastTap = currentTime;
+  });
+</script>
+
+<!-- Tooltip Initialization -->
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
+</script>
+<!-- Enable repeated animation -->
+ <script>
+  AOS.init({ once: false }); // Enable repeated animation
+</script>
+    
+<!-- to avoid the overflow width -->
+
+  <!-- // end of loading div -->
+  </div>
+  <!-- Preloading script -->
+ <script>
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    const burst = document.getElementById("burst");
+
+    setTimeout(() => {
+      burst.classList.add("show");
+      setTimeout(() => {
+        preloader.style.transition = "opacity 0.5s ease";
+        preloader.style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("main-content").style.display = "block";
+
+          // 👇 Re-initialize AOS here
+          if (typeof AOS !== 'undefined') {
+            AOS.refresh(); // or AOS.init() if not already done
+          }
+
+        }, 300);
+      }, 300);
+    }, 700);
+  });
+  
+</script>
+
+
+<!-- preloading end -->
+</body>
+
+</html>
