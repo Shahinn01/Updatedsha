@@ -426,6 +426,12 @@ html, body {
   height:900px ;
   overflow: hidden;
 }
+  @media screen and (min-width: 700px){
+.video-background{
+  position: relative;
+  height:1200px ;
+  overflow: hidden;
+}
 }
   
 
